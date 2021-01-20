@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ModalInputComponent } from './modal-input.component';
 
@@ -6,7 +6,7 @@ describe('ModalInputComponent', () => {
   let component: ModalInputComponent;
   let fixture: ComponentFixture<ModalInputComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ModalInputComponent ]
     })
