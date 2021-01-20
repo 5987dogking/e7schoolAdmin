@@ -7,7 +7,7 @@ import { LoginGuard } from './guard/login/login.guard';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
-    path: '', component: LayoutComponent, canActivate: [LoginGuard], loadChildren: './page/page.module#PageModule'
+    path: '', component: LayoutComponent, canActivate: [LoginGuard], loadChildren: () => import('./page/page.module').then(m => m.PageModule)
   }
 ];
 
