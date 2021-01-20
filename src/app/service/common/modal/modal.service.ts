@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { ModalInputComponent } from 'src/app/common/modal/modal-input/modal-input.component';
 import { Observable } from 'rxjs';
 

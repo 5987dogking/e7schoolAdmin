@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReplyService } from 'src/app/service/reply/reply.service';
-import { MatSelectChange, MatSnackBar } from '@angular/material';
+import { MatSelectChange } from '@angular/material/select';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Message } from 'src/app/interface/line-bot-message';
 
 @Component({
