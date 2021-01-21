@@ -9,7 +9,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class LayoutComponent implements OnInit {
 
   constructor(
-    public afAuth: AngularFireAuth,
+    public auth: AngularFireAuth,
   ) { }
 
   ngOnInit() {

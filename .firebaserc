@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "review-clean02"
+  },
+  "targets": {
+    "review-clean02": {
+      "hosting": {
+        "e7schoolAdmin": [
+          "review-clean02"
+        ]
+      }
+    }
+  }
+}

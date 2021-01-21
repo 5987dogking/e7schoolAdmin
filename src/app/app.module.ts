@@ -12,19 +12,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment.prod';
 import { MaterialModule } from './module/material/material.module';
 
-import { FirebaseUIModule, firebase, firebaseui } from 'firebaseui-angular';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { ModalInputComponent } from './common/modal/modal-input/modal-input.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-const firebaseUiAuthConfig: firebaseui.auth.Config = {
-  signInFlow: 'popup',
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-  ],
-  tosUrl: '<your-tos-link>',
-  privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
-  credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
-};
 
 @NgModule({
   declarations: [
@@ -41,8 +32,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
-    MaterialModule,
+    MaterialModule, NgbModule,
   ],
   entryComponents: [ModalInputComponent],
   providers: [],

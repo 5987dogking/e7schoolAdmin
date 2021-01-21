@@ -1,4 +1,6 @@
-<div class="container mtop">
+<div class="container text-center">
+  <br>
+  <br>
   <!-- <ng-container *ngIf="adminService.admin !== null">
     {{ adminService.admin | json }}
     <form class="example-form">
@@ -8,14 +10,21 @@
       <button mat-raised-button color="primary" (click)="adminService.adminUpdate()">Update</button>
     </form>
   </ng-container> -->
-  <div *ngIf="adminService.admin !== null">
+  <!-- <div *ngIf="adminService.admin !== null">
     <p>如果帳號異常，請切換帳號或是聯絡管理員。</p>
     <p>管理員：劉振維</p>
     <p>管理員電話：0986192292</p>
     <p>管理員信箱：q11295@gmail.com</p>
+  </div> -->
+  <div *ngIf="auth.user | async as user; else showLogin">
+    <h1>Hello {{ user.displayName }}!</h1>
+    <button (click)="logout()">Logout</button>
   </div>
-  <firebase-ui (signInSuccessWithAuthResult)="successCallback($event)" (signInFailure)="errorCallback($event)">
-  </firebase-ui>
+  <ng-template #showLogin>
+    <p>請登入.</p>
+    <button mat-raised-button color="primary" class="w-100" (click)="login()">登入</button>
+  </ng-template>
 
-  <button *ngIf="adminService.admin !== null" mat-raised-button color="accent" class="btn-block" (click)="logout()">登出</button>
+  <!-- <button *ngIf="adminService.admin !== null" mat-raised-button color="accent" class="btn-block"
+    (click)="logout()">登出</button> -->
 </div>
